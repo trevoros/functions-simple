@@ -24,7 +24,13 @@ steps:
   inputs:
     rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
     includeRootFolder: false
-    archiveFile: "$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip"
+    archiveFile: "$(System.DefaultWorkingDirectory)/$(Build.BuildId)/$(Build.BuildId).zip"
+  
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/TEST-RESULTS.xml'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
@@ -33,7 +39,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId)'
 
 
   
