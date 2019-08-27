@@ -1,0 +1,23 @@
+{
+  "name": "functions-simple",
+  "version": "1.0.0",
+  "description": "A simple function example.",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^24.9.0"`
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevoros/functions-simple.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trevoros/functions-simple/issues"
+  },
+  "homepage": "https://github.com/trevoros/functions-simple#readme"
+}
